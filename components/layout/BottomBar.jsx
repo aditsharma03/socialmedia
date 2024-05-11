@@ -2,7 +2,7 @@ import React from 'react'
 
 const BottomBar = () => {
   return (
-    <div>BottomBar</div>
+    <div className=' bg-slate-600'>BottomBar</div>
   )
 }
 
