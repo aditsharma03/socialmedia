@@ -8,7 +8,7 @@ const MainContainer = ({children}) => {
     <section >
       {/* <RightSideBar /> */}
     </section>
-    {children}
+    {/* {children} */}
     </div>
   )
 }

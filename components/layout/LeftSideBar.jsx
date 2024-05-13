@@ -23,7 +23,6 @@ const LeftSideBar = () => {
       <div className='h-full flex flex-col justify-end items-end '>
         <SignedIn>
           <button className=' p-2 w-2/3 hover:bg-zinc-900 rounded-md'>
-            {/* <UserButton showName /> */}
             <SignOutButton />
           </button>
         </SignedIn>
