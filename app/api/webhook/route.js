@@ -88,5 +88,5 @@ export async function POST(req) {
     }
   }
 
-  return new Response('ffff', { status: 200 })
+  return new Response(`${eventType}`, { status: 200 })
 }
