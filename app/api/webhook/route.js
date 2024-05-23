@@ -12,7 +12,7 @@ export async function POST(req) {
     throw new Error('Please add WEBHOOK_SECRET from Clerk Dashboard to .env or .env.local')
   }
 
-  // Get the headers
+  /* // Get the headers
   const headerPayload = headers();
   const svix_id = headerPayload.get("svix-id");
   const svix_timestamp = headerPayload.get("svix-timestamp");
@@ -23,7 +23,7 @@ export async function POST(req) {
     return new Response('Error occured -- no svix headers', {
       status: 400
     })
-  }
+  } */
 
   // Get the body
   const payload = await req.json()
