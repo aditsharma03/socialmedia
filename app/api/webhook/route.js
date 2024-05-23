@@ -57,7 +57,7 @@ export async function POST(req) {
 
     try{
         await createOrUpdateUser( id, first_name, last_name, image_url, email_addresses, username );
-        
+        console.log("user updated :vvv");
         return new Response( 'user successfully created/updated', {
             status: 200,
         });
