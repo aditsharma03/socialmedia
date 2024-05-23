@@ -12,7 +12,7 @@ export async function POST(req) {
     throw new Error('Please add WEBHOOK_SECRET from Clerk Dashboard to .env or .env.local')
   }
 
-  /* // Get the headers
+  // Get the headers
   const headerPayload = headers();
   const svix_id = headerPayload.get("svix-id");
   const svix_timestamp = headerPayload.get("svix-timestamp");
@@ -23,11 +23,11 @@ export async function POST(req) {
     return new Response('Error occured -- no svix headers', {
       status: 400
     })
-  } */
+  } 
 
   const payload = await req.json()
   const body = JSON.stringify(payload);
-  /* // Get the body
+  // Get the body
 
   // Create a new Svix instance with your secret.
   const wh = new Webhook(WEBHOOK_SECRET);
@@ -45,14 +45,12 @@ export async function POST(req) {
     return new Response('Error occured', {
       status: 400
     })
-  } */
+  } 
 
   // Do something with the payload
   // For this guide, you simply log the payload to the console
-  // const { id } = evt.data;
-  // const eventType = evt?.type;
-    const eventType = 'user.created'
-  console.log(eventType);
+  const { id } = evt.data;
+  const eventType = evt?.type;
     
   if( eventType === 'user.created' || eventType === 'user.updated' ){
     const { id, first_name, last_name, image_url, email_addresses, username } = evt?.data;
