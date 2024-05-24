@@ -63,7 +63,7 @@ export async function POST(req) {
         });
     }
     catch( error ){
-        console.log( 'error creating/updating user: ', errror );
+        console.error( 'error creating/updating user: ', error );
         return new Response( 'Error occured: ', {
             status: 500,
         });
@@ -79,7 +79,7 @@ export async function POST(req) {
             status: 200,
         });
     } catch (error) {
-        console.log( 'error deleting user: ', error );
+        console.error( 'error deleting user: ', error );
         return new Response( 'error occured while deleting user', {
             status: 500,
         });
