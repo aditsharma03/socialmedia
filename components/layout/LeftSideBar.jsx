@@ -1,14 +1,38 @@
-import React from 'react';
+"use client"
+
+import React, { useEffect, useState } from 'react';
 import Menu from '@components/layout/Menu';
 import {
     SignInButton,
     SignOutButton,
     SignedIn,
     SignedOut,
+    useUser,
 } from '@clerk/nextjs';
+import Loader from '@components/Loader';
+
+
 
 const LeftSideBar = () => {
-    return (
+    
+    const { user, isLoaded } = useUser();
+    const [ loading, setLoading ] = useState(true);
+    const [ userData, setUserData ] = useState({});
+    
+    const getUser = async ()=>{
+        const response = await fetch(`/api/user/${user.id}`);
+        const data = await response.json();
+
+        setUserData(data);
+        setLoading(false);
+    }
+
+    useEffect( ()=>{
+        if(user) getUser();
+    }, [user]);
+
+    return  loading || !isLoaded ? Loader :
+    (
         <div className='h-full w-1/4 left-0 top-0 overflow-auto px-10 py-6 flex flex-col gap-6 max-md:hidden bg-zinc-950'>
             <h1 className=' text-2xl font-mono'>
                 Minimal Social Media Application
@@ -23,6 +47,7 @@ const LeftSideBar = () => {
             <div className=' px-5'>
                 <hr />
             </div>
+
 
             <div className='h-full flex flex-col justify-end items-center'>
                 <SignedIn>
