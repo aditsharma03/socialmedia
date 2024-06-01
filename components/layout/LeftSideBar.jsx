@@ -28,10 +28,10 @@ const LeftSideBar = () => {
     }
 
     useEffect( ()=>{
-        if(user && isLoaded ) getUser();
-    }, [isLoaded, user]);
+        if(user) getUser();
+    }, [user]);
 
-    return  (loading || !isLoaded)? <Loader /> :
+    return  (loading || !isLoaded) && isSignedIn ? <Loader /> :
     (
         <div className='h-full w-1/4 left-0 top-0 overflow-auto px-10 py-6 flex flex-col gap-6 max-md:hidden bg-zinc-950'>
             <h1 className=' text-2xl font-mono'>
