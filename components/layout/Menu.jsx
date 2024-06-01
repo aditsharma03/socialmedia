@@ -22,7 +22,7 @@ const Menu = () => {
         {
             MenuItems.map( (element, index) => {
                 return <Link href={element.route} key={index}>
-                    <button className=' font-mono h-8 w-3/6  text-center rounded-md hover:bg-zinc-900 '>
+                    <button className=' font-mono py-2 w-3/5  text-center rounded-md hover:bg-zinc-900 '>
                         {element.label}
                     </button>
                 </Link>
