@@ -4,11 +4,10 @@ import RightSideBar from './RightSideBar'
 
 const MainContainer = ({children}) => {
   return (
-    <div className='flex bg-zinc-800 h-full w-full'>
-    <section >
-      {/* <RightSideBar /> */}
-    </section>
-    {/* {children} */}
+    <div className='flex justify-center p-20 bg-zinc-800 h-full w-full'>
+      <div>
+        {children}
+      </div>
     </div>
   )
 }

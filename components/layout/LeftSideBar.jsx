@@ -15,23 +15,23 @@ import Loader from '@components/Loader';
 
 const LeftSideBar = () => {
     
-    const { user, isLoaded } = useUser();
-    const [ loading, setLoading ] = useState(true);
-    const [ userData, setUserData ] = useState({});
+    // const { isSignedIn, user, isLoaded } = useUser();
+    // const [ loading, setLoading ] = useState(true);
+    // const [ userData, setUserData ] = useState({});
     
-    const getUser = async ()=>{
-        const response = await fetch(`/api/user/${user.id}`);
-        const data = await response.json();
+    // const getUser = async ()=>{
+    //     const response = await fetch(`/api/user/${user.id}`);
+    //     const data = await response.json();
 
-        setUserData(data);
-        setLoading(false);
-    }
+    //     setUserData(data);
+    //     setLoading(false);
+    // }
 
-    useEffect( ()=>{
-        if(user) getUser();
-    }, [user]);
+    // useEffect( ()=>{
+    //     if(user && isLoaded ) getUser();
+    // }, [isLoaded, user]);
 
-    return  loading || !isLoaded ? <Loader /> :
+    return  //(loading || !isLoaded)? <Loader /> :
     (
         <div className='h-full w-1/4 left-0 top-0 overflow-auto px-10 py-6 flex flex-col gap-6 max-md:hidden bg-zinc-950'>
             <h1 className=' text-2xl font-mono'>
