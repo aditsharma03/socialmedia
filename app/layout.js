@@ -2,6 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
+import Landing from "@components/Landing";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,7 +16,14 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider appearance={dark}>
       <html lang="en">
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          {/* <SignedIn> */}
+            {children}
+          {/* </SignedIn>
+          <SignedOut>
+            <Landing />
+          </SignedOut> */}
+        </body>
       </html>
     </ClerkProvider>
 
